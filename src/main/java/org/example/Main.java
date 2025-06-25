@@ -85,7 +85,7 @@ public class Main {
             return;
         }
         System.out.println("Choose what you want to update for this empId: "+e);
-        System.out.println("1.role 2.salary 3.age");
+        System.out.println("1.Role 2.salary 3.age");
         int k1=sc.nextInt();
 
         if(k1==1){
