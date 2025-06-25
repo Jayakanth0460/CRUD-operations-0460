@@ -77,7 +77,7 @@ public class Main {
     //UPDATE
     public static void update(){
 
-        System.out.println("enter employee id to update");
+        System.out.println("Enter employee id to update");
         int e=sc.nextInt();
 
         if(!empIds.containsKey(e)){
