@@ -81,7 +81,7 @@ public class Main {
         int e=sc.nextInt();
 
         if(!empIds.containsKey(e)){
-            System.out.println("this employee does not exist");
+            System.out.println("This employee does not exist");
             return;
         }
         System.out.println("Choose what you want to update for this empId: "+e);
