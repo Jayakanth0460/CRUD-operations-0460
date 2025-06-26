@@ -15,43 +15,51 @@ public class Main {
     static MongoCollection<Document> collection = database.getCollection("employees");
     static HashMap<Integer,Integer> empIds=new HashMap<>();
     public static void main(String[] args) {
-        int k;
-        do {
+
+        while(true) {
             System.out.println("CRUD OPERATIONS");
             System.out.println("1.Create  2.Read  3.Update 4.Delete 5.Exit");
             System.out.println("please select your choice");
+            int k;
             k = sc.nextInt();
-            if(k>5){
+            if (k > 5) {
                 System.out.println("Invalid choice please try again");
-               // return;
             }
-            switch (k) {
-                case 1:
-                    insertion();
-                    break;
-                case 2:
-                    printt();
-                    break;
-                case 3:printt();
-                    update();
-                    break;
-                case 4:
-                    delete();
-                    break;
-                default:
-                    break;
-            }
-        }while(k!=5);
+            else if(k==5)
+                break;
+            else
+                do_operations(k);
+
+
+        }
+
         System.out.println("Exit Successful");
     }
     //CREATE
+    public static void do_operations(int k){
+        switch (k) {
+            case 1:
+                insertion();
+                break;
+            case 2:
+                printt();
+                break;
+            case 3:printt();
+                update();
+                break;
+            case 4:
+                delete();
+                break;
+
+        }
+    }
     public static void insertion() {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter employee id");
         int emp = sc.nextInt();
-
         empIds.put(emp,1);
         System.out.println("enter name of the employee");
+        sc.nextLine();
         String name = sc.nextLine();
         System.out.println("enter age of the employee");
         int age=sc.nextInt();
