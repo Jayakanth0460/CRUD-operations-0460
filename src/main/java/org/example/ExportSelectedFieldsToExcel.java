@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class ExportSelectedFieldsToExcel {
     public static void main(String[] args) {
-        // MongoDB connection
+
         MongoClient mongoClient=MongoClients.create("mongodb://localhost:27017");
         MongoDatabase database=mongoClient.getDatabase("companyDB");
         MongoCollection<Document> collection=database.getCollection("employees");
@@ -32,7 +32,7 @@ public class ExportSelectedFieldsToExcel {
             }
         }
 
-        // Write Excel file
+
         try (FileOutputStream fileOut = new FileOutputStream("SelectedFields.xlsx")) {
             workbook.write(fileOut);
             workbook.close();
